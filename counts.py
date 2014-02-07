@@ -11,7 +11,3 @@ def draw_counts():
         counts = f.read()
 
     return "There have been {} downloads of Blaunet".format(counts)
-
-
-if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=5000)
