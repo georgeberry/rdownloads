@@ -108,4 +108,4 @@ if __name__ == "__main__":
     a = date_query(datetime.date(2014,1,1))
     t3 = threading.Thread(target=a.run)
     t3.start()
-    app.run()
+    app.run(port=5000)
