@@ -107,5 +107,7 @@ def draw_counts():
 if __name__ == "__main__":
     a = date_query(datetime.date(2014,1,1))
     t3 = threading.Thread(target=a.run)
+    print 'thread started'
     t3.start()
-    app.run(port=5000)
+    app.run(host='0.0.0.0', port=5000)
+
