@@ -88,19 +88,16 @@ class date_query:
         with open('counts.txt', 'wb') as f:
             f.write(str(current_count))
 
-        while True:
-            self.update()
+        self.update()
 
-            current_count = sum([x[1] for x in self.counts])
+        current_count = sum([x[1] for x in self.counts])
 
-            with open('counts.txt', 'wb') as f:
-                f.write(str(current_count))
+        with open('counts.txt', 'wb') as f:
+            f.write(str(current_count))
 
-            print 'checked'
-            time.sleep(43200)
+        print 'checked'
 
 if __name__ == "__main__":
     a = date_query(datetime.date(2014,1,1))
-    t3 = threading.Thread(target=a.run)
-    t3.start()
-    print 'thread started'
+    print 'starting'
+    a.run()
