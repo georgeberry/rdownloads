@@ -88,16 +88,9 @@ class date_query:
         with open('counts.txt', 'wb') as f:
             f.write(str(current_count))
 
-        self.update()
-
-        current_count = sum([x[1] for x in self.counts])
-
-        with open('counts.txt', 'wb') as f:
-            f.write(str(current_count))
-
-        print 'checked'
-
-if __name__ == "__main__":
-    a = date_query(datetime.date(2014,1,1))
-    print 'starting'
-    a.run()
+        while True:
+            self.update()
+            current_count = sum([x[1] for x in self.counts])
+            with open('counts.txt', 'wb') as f:
+                f.write(str(current_count))
+            time.sleep(3600)

@@ -1,2 +1,1 @@
-web: gunicorn counts:app 
-worker: python worker.py
+web: gunicorn counts:app
